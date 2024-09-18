@@ -35,6 +35,7 @@ main {
     gap: 5rem;
     align-items: center;
     max-width: 90rem;
+    margin: auto;
 }
 
 .txt-wrapper {
