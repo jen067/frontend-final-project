@@ -5,7 +5,7 @@
     --clr--title: hsl(0, 0%, 27%); /* title 顏色 */
     --clr--txt: hsl(0, 0%, 47%); /* 段落文字顏色 */
     /* Font Family */
-    --fz: 16px;
+    --fz: 1rem; /* 統一使用 rem */
     --font-chocolate: font-family: "Chocolate Classical Sans", sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
     padding: 3rem 1rem;
     position: relative;
 }
-body>*+*{
+body > * + * {
     margin-top: 1.5rem;
 }
 
@@ -32,13 +32,14 @@ section {
 main {
     display: flex;
     justify-content: center;
-    gap: 5rem;
     align-items: center;
     max-width: 90rem;
+    margin: auto;
 }
 
 .txt-wrapper {
     max-width: 30rem;
+
 }
 
 .txt-wrapper > * + * {
@@ -48,8 +49,25 @@ main {
 .tag {
     font-size: 1.5rem;
     color: var(--clr--tag);
+    position: relative;
 }
 
+.circle{
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: hsl(0, 0%, 27%);
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(1);
+    transition: transform 1s;
+    top: 0.5rem;
+    z-index: 1;
+    opacity: 0;
+}
+.grow{
+    transform: scale(300);
+    opacity: 1;
+}
 .main-title {
     font-size: 5rem;
     color: var(--clr--title);
@@ -83,50 +101,55 @@ main {
     max-width: 5rem;
 }
 
-.change-wrapper{
+.change-wrapper {
     width: 90%;
     margin: auto;
 }
-.items{
+
+.items {
     width: 100%;
 }
-.item{
+
+.item {
     max-width: 4.375rem;
     cursor: pointer;
 }
-.item img{
+
+.item img {
     width: 100%;
-    transition: transform .5s;
+    transition: transform 0.5s;
 }
 
-.item img:hover{
+.item img:hover {
     transform: translateY(-15px);
 }
 
-.change,.txt-wrapper {
+.change, .txt-wrapper {
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
-  }
-  
-  .fade-out{
+}
+
+.fade-out {
     opacity: 0;
-  }
-  
-.toggle{
+}
+
+.toggle {
     font-size: 1.5rem;
     color: var(--clr--txt);
     cursor: pointer;
 }
-.toggle:hover,.toggle:active{
-    color: #222
+
+.toggle:hover, .toggle:active {
+    color: #222;
 }
+
 /* Media Query Adjustments */
 
 @media screen and (max-width: 850px) {
     .img-wrapper {
         max-width: 40rem;
     }
-    .item{
+    .item {
         max-width: 4.2rem;
     }
 }
@@ -138,13 +161,13 @@ main {
     .intro-paragraph {
         font-size: 1rem;
     }
-    .item{
+    .item {
         max-width: 4rem;
     }
 }
 
 @media screen and (max-width: 40rem) {
-    body>*+*{
+    body > * + * {
         margin-top: 3rem;
     }
     main {
@@ -158,7 +181,7 @@ main {
     .img-wrapper {
         max-width: 20rem;
     }
-    .item{
+    .item {
         max-width: 4.375rem;
     }
 }
@@ -177,11 +200,13 @@ main {
         min-width: 3rem;
     }
 }
-@media screen and (max-width: 400px){
-    .items{
+
+@media screen and (max-width: 400px) {
+    .items {
         gap: 2rem;
     }
 }
+
 @media screen and (max-width: 300px) {
     .main-title {
         font-size: 2.6rem;
@@ -189,13 +214,13 @@ main {
     .intro-paragraph {
         font-size: 1rem;
     }
-    .items{
+    .items {
         gap: 1rem;
     }
     .item {
         min-width: 2rem;
     }
-    .toggle{
+    .toggle {
         font-size: 1rem;
     }
 }
