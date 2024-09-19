@@ -6,5 +6,5 @@ window.onload = function () {
 
 setTimeout(
   "location.href='https://jen067.github.io/frontend-final-project/intro-page/index.html'",
-  3000
+  4000
 );
