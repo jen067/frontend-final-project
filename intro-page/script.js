@@ -2,13 +2,16 @@
 const imgPreloadArr = [];
 // 前端緩存函式
 function frontendPreload() {
-  // 若有 4 張圖，用 for 迴圈遍歷
-  for (let i = 0; i < 3; i++) {
+  // 用一個陣列存放所有要預加載的圖片路徑
+  const imgSrcArr = ["img/img1.png", "img/img2.png", "img/img3.png"];
+
+  // 使用 for 迴圈遍歷每張圖片路徑
+  for (let i = 0; i < imgSrcArr.length; i++) {
     // 步驟 1. 建立實體化圖片
     const img = new Image();
-    // 步驟 2. 給予 src 屬性，這裡要替換成你的圖片路徑
-    img.src = `{img/img1.png,img/img2.png,img/img3.png}`;
-    // 步驟 3. 緩存放在記憶體
+    // 步驟 2. 給予 src 屬性，這裡使用的是當前遍歷的圖片路徑
+    img.src = imgSrcArr[i];
+    // 步驟 3. 將已緩存的圖片存放在記憶體中
     imgPreloadArr.push(img);
   }
 }
