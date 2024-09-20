@@ -21,7 +21,7 @@ main{
 }
 .fish{
     transition: transform 2s ease-out;
-    /* animation: fade 2s ease-out 1.2s both; */
+    animation: fade 2s ease-out 1.2s both;
 }
 .move{
     transform: translateX(30rem);
