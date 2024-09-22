@@ -25,20 +25,26 @@
   </head>
   <body>
     <section>
+      <div class="menu-btn"><i class="bi bi-water"></i></div>
+    </section>
+    <section>
       <main>
+        <!-- 文字區塊 -->
         <div class="txt-wrapper">
           <!-- 放置公尺 -->
-          <h2 class="tag">Starbucks</h2>
+          <h2 class="tag">200 METERS</h2>
+          <!-- 切換場景設置 -->
           <div class="circle"></div>
           <!-- 放置海底生物的名字 -->
-          <h2 class="main-title">Main Title</h2>
+          <h2 class="main-title">Main Title1</h2>
           <!-- 放置海底生物的介紹 -->
           <p class="intro-paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+            Main Title1 dolor sit amet consectetur adipisicing elit. Odit
             consequuntur voluptate nemo vitae ut ratione, quidem sapiente
             voluptatum et reprehenderit.
           </p>
         </div>
+        <!-- 圖片區塊 -->
         <div class="img-wrapper">
           <img src="img/img1.png" alt="Matcha starbucks" class="change" />
         </div>
@@ -48,27 +54,25 @@
       <div class="change-wrapper">
         <ul class="items">
           <li class="toggle upperPage">
-            <a
-              href="https://jen067.github.io/frontend-final-project/loading-page/index.html"
-            >
-              <i class="bi bi-caret-left-fill"></i>
+            <a href="../loading-page/index.html">
+              <i class="bi bi-caret-left-fill" title="上一層"></i>
             </a>
           </li>
-          <li class="item">
+          <li class="item item1">
             <img
               src="img/thumb1.png"
               alt="Matcha starbucks"
               onclick="circleGrow('hsl(0, 0%, 27%)');changeTxtColor('hsl(0, 0%, 27%)');changeImg('img/img1.png')"
             />
           </li>
-          <li class="item">
+          <li class="item item2">
             <img
               src="img/thumb2.png"
               alt="Sakura starbucks"
               onclick="circleGrow('#E8BFBC');changeTxtColor('#E8BFBC');changeImg('img/img2.png');"
             />
           </li>
-          <li class="item">
+          <li class="item item3">
             <img
               src="img/thumb3.png"
               alt="Berry starbucks"
@@ -76,7 +80,9 @@
             />
           </li>
           <li class="toggle nextPage">
-            <i class="bi bi-caret-right-fill"></i>
+            <a href="../loading-page/index.html">
+              <i class="bi bi-caret-right-fill" title="下一層"></i>
+            </a>
           </li>
         </ul>
       </div>

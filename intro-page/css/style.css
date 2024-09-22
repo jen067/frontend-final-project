@@ -1,32 +1,51 @@
+/* 創建 CSS 變數 */
 :root {
     /* Colors */
     --clr--bg: hsl(0, 0%, 98%);
-    --clr--tag: hsl(0, 0%, 40%);    /* tag 顏色 */
-    --clr--title: hsl(0, 0%, 27%); /* title 顏色 */
-    --clr--txt: hsl(0, 0%, 47%); /* 段落文字顏色 */
+    /* 公尺文字顏色 */
+    --clr--tag: hsl(0, 0%, 40%); 
+    /* 物種名稱顏色 */   
+    --clr--title: hsl(0, 0%, 27%);
+    /* 段落文字顏色 */ 
+    --clr--txt: hsl(0, 0%, 47%); 
+
     /* Font Family */
-    --fz: 1rem; /* 統一使用 rem */
+    --fz: 1rem;
     --font-chocolate: font-family: "Chocolate Classical Sans", sans-serif;
 }
 
 body {
+    /* 設定最小高度 */
     min-height: 100svh;
-    font-size: var(--fz); /* 定義檔案文字大小 */
-    font-family: var(--font-chocolate); /* 定義字形 */
+    /* 定義檔案文字大小 */
+    font-size: var(--fz);
+    /* 定義字形 */
+    font-family: var(--font-chocolate); 
+    /* 定義背景顏色 */
     background-color: var(--clr--bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* 避免畫面縮小時貼邊 */
     padding: 3rem 1rem;
     position: relative;
 }
+
+/* 設定下一層所有元素的外距 */
 body > * + * {
     margin-top: 1.5rem;
 }
 
 section {
     width: 90%;
+}
+
+.menu-btn .bi{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
 }
 
 main {
@@ -37,17 +56,20 @@ main {
     margin: auto;
 }
 
+/* 設定文字區塊最大寬度 */
 .txt-wrapper {
     max-width: 30rem;
-
 }
 
+/* 設定文字區塊下一層元素的外距 */
 .txt-wrapper > * + * {
     margin-top: 1rem;
 }
 
+/* 設定公尺區域樣式 */
 .tag {
     font-size: 1.5rem;
+    /* 設定文字顏色 */
     color: var(--clr--tag);
     position: relative;
 }
@@ -64,22 +86,29 @@ main {
     z-index: 1;
     opacity: 0;
 }
+
+/* .circle 觸發條件 */
 .grow{
     transform: scale(300);
     opacity: 1;
+    overflow: hidden;
 }
+
 .main-title {
     font-size: 5rem;
+    /* 設定文字顏色 */
     color: var(--clr--title);
 }
 
 .intro-paragraph {
     font-size: 1.2rem;
+    /* 設定文字顏色 */
     color: var(--clr--txt);
     line-height: 1.5;
     font-weight: 500;
 }
 
+/* 設定照片區塊最大寬度 */
 .img-wrapper {
     max-width: 20rem;
     width: 100%;
@@ -89,18 +118,6 @@ main {
     width: 100%;
 }
 
-.items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    list-style: none;
-}
-
-.item img {
-    max-width: 5rem;
-}
-
 .change-wrapper {
     width: 90%;
     margin: auto;
@@ -108,29 +125,11 @@ main {
 
 .items {
     width: 100%;
-}
-
-.item {
-    max-width: 4.375rem;
-    cursor: pointer;
-}
-
-.item img {
-    width: 100%;
-    transition: transform 0.5s;
-}
-
-.item img:hover {
-    transform: translateY(-15px);
-}
-
-.change, .txt-wrapper {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
-}
-
-.fade-out {
-    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
 }
 
 .toggle {
@@ -143,9 +142,39 @@ main {
     color: #222;
 }
 
+.item {
+    max-width: 4.375rem;
+    cursor: pointer;
+}
+
+/* 設定切換照片區塊樣式設定 */
+.item img {
+    width: 100%;
+    max-width: 5rem;
+    transition: transform 0.5s;
+}
+
+/* 設定滑鼠移入時的偏移 */
+.item img:hover {
+    transform: translateY(-15px);
+}
+
+/* 設定文字淡出樣式設定 */
+.change, .txt-wrapper {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+/* 設定文字淡出樣式設定 */
+.fade-out {
+    opacity: 0;
+}
+
+
+
 /* Media Query Adjustments */
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 53.125rem) {
     .img-wrapper {
         max-width: 40rem;
     }
@@ -154,7 +183,7 @@ main {
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 46.875rem) {
     .main-title {
         font-size: 4rem;
     }
@@ -201,13 +230,13 @@ main {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 25rem) {
     .items {
         gap: 2rem;
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 18.75rem) {
     .main-title {
         font-size: 2.6rem;
     }

@@ -19,10 +19,14 @@ function frontendPreload() {
 frontendPreload();
 
 let imgBeChanged = document.querySelector(".change");
-let colorBeChanged = document.querySelector(".main-title");
+let mainTitle = document.querySelector(".main-title");
+let paragraph = document.querySelector(".intro-paragraph");
 let txtWrapper = document.querySelector(".txt-wrapper");
 let circle = document.querySelector(".circle");
 let body = document.querySelector("body");
+let item = document.querySelectorAll(".item");
+
+// 設定變換圖片函式
 function changeImg(newSrc) {
   imgBeChanged.classList.add("fade-out");
   setTimeout(() => {
@@ -31,16 +35,17 @@ function changeImg(newSrc) {
   }, 1500);
 }
 
+// 設定變換標題顏色函式
 function changeTxtColor(newClr) {
   txtWrapper.classList.add("fade-out");
   setTimeout(() => {
-    colorBeChanged.style.color = newClr;
+    mainTitle.style.color = newClr;
     txtWrapper.classList.remove("fade-out");
   }, 1000);
 }
-console.log("h");
+
+// 設定切換圖片時的圓型大小函式
 function circleGrow(newclr) {
-  console.log("h");
   circle.style.background = newclr;
   circle.classList.add("grow");
   body.style.overflow = "hidden";
@@ -50,3 +55,24 @@ function circleGrow(newclr) {
     body.style.overflow = "visible";
   });
 }
+
+// 設定切換文字內容函式
+item.forEach((e) => {
+  e.addEventListener("click", () => {
+    setTimeout(() => {
+      if (e.classList.contains("item1")) {
+        mainTitle.innerHTML = "Main Title1";
+        paragraph.innerHTML =
+          "Main Title1 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
+      } else if (e.classList.contains("item2")) {
+        mainTitle.innerHTML = "Main Title2";
+        paragraph.innerHTML =
+          "Main Title2 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
+      } else if (e.classList.contains("item3")) {
+        mainTitle.innerHTML = "Main Title3";
+        paragraph.innerHTML =
+          "Main Title3 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
+      }
+    }, 1000);
+  });
+});
