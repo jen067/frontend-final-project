@@ -1,0 +1,255 @@
+/* 創建 CSS 變數 */
+:root {
+    /* Colors */
+    --clr--bg: hsl(0, 0%, 98%);
+    /* 公尺文字顏色 */
+    --clr--tag: hsl(0, 0%, 40%); 
+    /* 物種名稱顏色 */   
+    --clr--title: hsl(0, 0%, 27%);
+    /* 段落文字顏色 */ 
+    --clr--txt: hsl(0, 0%, 47%); 
+
+    /* Font Family */
+    --fz: 1rem;
+    --font-chocolate: font-family: "Chocolate Classical Sans", sans-serif;
+}
+
+body {
+    /* 設定最小高度 */
+    min-height: 100svh;
+    /* 定義檔案文字大小 */
+    font-size: var(--fz);
+    /* 定義字形 */
+    font-family: var(--font-chocolate); 
+    /* 定義背景顏色 */
+    background-color: var(--clr--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 避免畫面縮小時貼邊 */
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+/* 設定下一層所有元素的外距 */
+body > * + * {
+    margin-top: 1.5rem;
+}
+
+section {
+    width: 90%;
+}
+
+.menu-btn .bi{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90rem;
+    margin: auto;
+}
+
+/* 設定文字區塊最大寬度 */
+.txt-wrapper {
+    max-width: 30rem;
+}
+
+/* 設定文字區塊下一層元素的外距 */
+.txt-wrapper > * + * {
+    margin-top: 1rem;
+}
+
+/* 設定公尺區域樣式 */
+.tag {
+    font-size: 1.5rem;
+    /* 設定文字顏色 */
+    color: var(--clr--tag);
+    position: relative;
+}
+
+.circle{
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: hsl(0, 0%, 27%);
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(1);
+    transition: transform 1s;
+    top: 0.5rem;
+    z-index: 1;
+    opacity: 0;
+}
+
+/* .circle 觸發條件 */
+.grow{
+    transform: scale(300);
+    opacity: 1;
+    overflow: hidden;
+}
+
+.main-title {
+    font-size: 5rem;
+    /* 設定文字顏色 */
+    color: var(--clr--title);
+}
+
+.intro-paragraph {
+    font-size: 1.2rem;
+    /* 設定文字顏色 */
+    color: var(--clr--txt);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* 設定照片區塊最大寬度 */
+.img-wrapper {
+    max-width: 20rem;
+    width: 100%;
+}
+
+.img-wrapper img {
+    width: 100%;
+}
+
+.change-wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.toggle {
+    font-size: 1.5rem;
+    color: var(--clr--txt);
+    cursor: pointer;
+}
+
+.toggle:hover, .toggle:active {
+    color: #222;
+}
+
+.item {
+    max-width: 4.375rem;
+    cursor: pointer;
+}
+
+/* 設定切換照片區塊樣式設定 */
+.item img {
+    width: 100%;
+    max-width: 5rem;
+    transition: transform 0.5s;
+}
+
+/* 設定滑鼠移入時的偏移 */
+.item img:hover {
+    transform: translateY(-15px);
+}
+
+/* 設定文字淡出樣式設定 */
+.change, .txt-wrapper {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+/* 設定文字淡出樣式設定 */
+.fade-out {
+    opacity: 0;
+}
+
+
+
+/* Media Query Adjustments */
+
+@media screen and (max-width: 53.125rem) {
+    .img-wrapper {
+        max-width: 40rem;
+    }
+    .item {
+        max-width: 4.2rem;
+    }
+}
+
+@media screen and (max-width: 46.875rem) {
+    .main-title {
+        font-size: 4rem;
+    }
+    .intro-paragraph {
+        font-size: 1rem;
+    }
+    .item {
+        max-width: 4rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    body > * + * {
+        margin-top: 3rem;
+    }
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .intro-paragraph {
+        font-size: 1.2rem;
+    }
+    .img-wrapper {
+        max-width: 20rem;
+    }
+    .item {
+        max-width: 4.375rem;
+    }
+}
+
+@media screen and (max-width: 30rem) {
+    .main-title {
+        font-size: 4rem;
+    }
+    .intro-paragraph {
+        font-size: 1.1rem;
+    }
+    .tag {
+        font-size: 1.2rem;
+    }
+    .item {
+        min-width: 3rem;
+    }
+}
+
+@media screen and (max-width: 25rem) {
+    .items {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 18.75rem) {
+    .main-title {
+        font-size: 2.6rem;
+    }
+    .intro-paragraph {
+        font-size: 1rem;
+    }
+    .items {
+        gap: 1rem;
+    }
+    .item {
+        min-width: 2rem;
+    }
+    .toggle {
+        font-size: 1rem;
+    }
+}

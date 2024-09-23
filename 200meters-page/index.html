@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side Page</title>
+
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="menu-btn"><i class="bi bi-water"></i></div>
+    </section>
+    <section>
+      <main>
+        <!-- 文字區塊 -->
+        <div class="txt-wrapper">
+          <!-- 放置公尺 -->
+          <h2 class="tag">200 METERS</h2>
+          <!-- 切換場景設置 -->
+          <div class="circle"></div>
+          <!-- 放置海底生物的名字 -->
+          <h2 class="main-title">Main Title1</h2>
+          <!-- 放置海底生物的介紹 -->
+          <p class="intro-paragraph">
+            Main Title1 dolor sit amet consectetur adipisicing elit. Odit
+            consequuntur voluptate nemo vitae ut ratione, quidem sapiente
+            voluptatum et reprehenderit.
+          </p>
+        </div>
+        <!-- 圖片區塊 -->
+        <div class="img-wrapper">
+          <img src="img/img1.png" alt="Matcha starbucks" class="change" />
+        </div>
+      </main>
+    </section>
+    <section>
+      <div class="change-wrapper">
+        <ul class="items">
+          <li class="toggle upperPage">
+            <a href="../loading-page/index.html">
+              <i class="bi bi-caret-left-fill" title="上一層"></i>
+            </a>
+          </li>
+          <li class="item item1">
+            <img
+              src="img/thumb1.png"
+              alt="Matcha starbucks"
+              onclick="circleGrow('hsl(0, 0%, 27%)');changeTxtColor('hsl(0, 0%, 27%)');changeImg('img/img1.png')"
+            />
+          </li>
+          <li class="item item2">
+            <img
+              src="img/thumb2.png"
+              alt="Sakura starbucks"
+              onclick="circleGrow('#E8BFBC');changeTxtColor('#E8BFBC');changeImg('img/img2.png');"
+            />
+          </li>
+          <li class="item item3">
+            <img
+              src="img/thumb3.png"
+              alt="Berry starbucks"
+              onclick="circleGrow('#F47DD2');changeTxtColor('#F47DD2');changeImg('img/img3.png')"
+            />
+          </li>
+          <li class="toggle nextPage">
+            <a href="../loading-page/index.html">
+              <i class="bi bi-caret-right-fill" title="下一層"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
