@@ -1,7 +1,7 @@
-const fish = document.querySelector(".fish");
+const submarine = document.querySelector(".submarine");
 
 window.onload = function () {
-  setTimeout(() => fish.classList.add("move"), 500);
+  setTimeout(() => submarine.classList.add("move"), 500);
 };
 
-setTimeout("location.href='../intro-page/index.html'", 4000);
+setTimeout("location.href='../300meters-page/index.html'", 4000);
