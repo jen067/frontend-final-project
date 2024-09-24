@@ -24,7 +24,8 @@ let paragraph = document.querySelector(".intro-paragraph");
 let txtWrapper = document.querySelector(".txt-wrapper");
 let circle = document.querySelector(".circle");
 let body = document.querySelector("body");
-let item = document.querySelectorAll(".item");
+let item = document.querySelectorAll(".item"); // 物件切換按鈕
+let toggle = document.querySelectorAll(".toggle"); // 頁面切換按鈕
 
 // 設定變換圖片函式
 function changeImg(newSrc) {
@@ -74,5 +75,21 @@ item.forEach((e) => {
           "Main Title3 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
       }
     }, 1000);
+  });
+});
+
+// 設定頁面切換
+toggle.forEach((e) => {
+  e.addEventListener("click", () => {
+    if (e.classList.contains("nextPage")) {
+      // 儲存當前頁面的來源和目標頁面
+      localStorage.setItem("sourcePage", "100meters-page");
+      localStorage.setItem("targetPage", "200meters-page");
+      window.location.href = "../loading-page/index.html";
+    } else {
+      localStorage.setItem("sourcePage", "100meters-page");
+      localStorage.setItem("targetPage", "index.html");
+      window.location.href = "../loading-page/index.html";
+    }
   });
 });
