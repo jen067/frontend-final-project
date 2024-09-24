@@ -8,7 +8,7 @@ body{
 }
 main{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-evenly;
     align-items: center;
     max-width: 45rem;
@@ -38,7 +38,7 @@ main> * + *{
 }
 
 .move{
-    transform: translateY(25rem);
+    transform: translateY(-25rem);
 }
 
 svg>*{

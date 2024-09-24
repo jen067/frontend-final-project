@@ -85,11 +85,11 @@ toggle.forEach((e) => {
       // 儲存當前頁面的來源和目標頁面
       localStorage.setItem("sourcePage", "300meters-page");
       localStorage.setItem("targetPage", "400meters-page");
-      window.location.href = "../loading-page/index.html";
+      window.location.href = "../next-page/index.html";
     } else {
       localStorage.setItem("sourcePage", "300meters-page");
       localStorage.setItem("targetPage", "200meters-page");
-      window.location.href = "../loading-page/index.html";
+      window.location.href = "../upper-page/index.html";
     }
   });
 });
