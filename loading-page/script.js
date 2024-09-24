@@ -1,19 +1,23 @@
+const main = document.querySelector("main");
 const submarine = document.querySelector(".submarine");
 
 window.onload = function () {
-  setTimeout(() => submarine.classList.add("move"), 500);
   const sourcePage = localStorage.getItem("sourcePage");
   const targetPage = localStorage.getItem("targetPage");
-  // console.log("Source Page: " + sourcePage);
-  // console.log("Target Page: " + targetPage);
-  // console.log("../" + targetPage + "/index.html");
+  setTimeout(() => submarine.classList.add("move"), 500);
+  console.log("Source Page: " + sourcePage);
+  console.log("Target Page: " + targetPage);
+  console.log("../" + targetPage + "/index.html");
   setTimeout(function () {
-    if (targetPage == "200meters-page") {
-      // 跳轉到目標頁面
+    if (targetPage == "index.html") window.location.href = "../" + targetPage;
+    else if (targetPage == "100meters-page")
       window.location.href = "../" + targetPage + "/index.html";
-    } else if (targetPage == "index.html") {
-      window.location.href = "../" + targetPage;
-    }
+    else if (targetPage == "200meters-page")
+      window.location.href = "../" + targetPage + "/index.html";
+    else if (targetPage == "300meters-page")
+      window.location.href = "../" + targetPage + "/index.html";
+    else if (targetPage == "400meters-page")
+      window.location.href = "../" + targetPage + "/index.html";
   }, 4000);
 };
 
