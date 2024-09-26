@@ -62,16 +62,16 @@ item.forEach((e) => {
   e.addEventListener("click", () => {
     setTimeout(() => {
       if (e.classList.contains("item1")) {
-        mainTitle.innerHTML = "Main Title1";
-        paragraph.innerHTML =
+        mainTitle.innerText = "Main Title1";
+        paragraph.innerText =
           "Main Title1 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
       } else if (e.classList.contains("item2")) {
-        mainTitle.innerHTML = "Main Title2";
-        paragraph.innerHTML =
+        mainTitle.innerText = "Main Title2";
+        paragraph.innerText =
           "Main Title2 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
       } else if (e.classList.contains("item3")) {
-        mainTitle.innerHTML = "Main Title3";
-        paragraph.innerHTML =
+        mainTitle.innerText = "Main Title3";
+        paragraph.innerText =
           "Main Title3 dolor sit amet consectetur adipisicing elit. Odit consequuntur voluptate nemo vitae ut ratione, quidem sapiente voluptatum et reprehenderit.";
       }
     }, 1000);
