@@ -24,9 +24,12 @@ body {
   background-position: center bottom;
 }
 .banner .bg-2 {
-  background-image: url("../img/IMG_0326.PNG");
-  background-size: auto 100%;
-  background-position: center bottom;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  animation: moonAppear 3s 1s ease-out both;
+  top: 20%;
+  left: 20%;
 }
 .banner .bg-3 {
   background-image: url("../img/IMG_0322.PNG");
@@ -48,13 +51,68 @@ body {
   background-size: auto 100%;
   background-position: center bottom;
 }
-.banner h1 {
-  position: absolute;
-  top: 20%;
-  left: 0;
+.banner .allstars {
   width: 100%;
-  text-align: center;
-  font-size: 11rem;
-  font-family: "Pacifico", cursive;
-  color: #fff;
+  height: 100%;
+  border-radius: 0;
+}
+.banner .allstars [class^=star] {
+  width: 15rem;
+  height: 0.1rem;
+  border-radius: 0;
+  background: linear-gradient(90deg, #fff 0, transparent 60%);
+  position: absolute;
+  transform: rotate(-45deg);
+  animation: falling 3s infinite ease-out;
+}
+.banner .allstars .star1 {
+  left: 67.0495151683%;
+  top: -9.2506438553%;
+  animation-delay: -0.1s;
+}
+.banner .allstars .star2 {
+  left: 18.028428466%;
+  top: -7.9491896277%;
+  animation-delay: -0.2s;
+}
+.banner .allstars .star3 {
+  left: 55.3531683153%;
+  top: -7.1222541853%;
+  animation-delay: -0.3s;
+}
+.banner .allstars .star4 {
+  left: 31.1970781252%;
+  top: 0.6893364968%;
+  animation-delay: -0.4s;
+}
+.banner .allstars .star5 {
+  left: 15.5894028841%;
+  top: -4.4395215274%;
+  animation-delay: -0.5s;
+}
+
+@keyframes moonAppear {
+  0% {
+    box-shadow: inset 0px 0px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: inset 5px -5px rgba(255, 255, 255, 0.8);
+  }
+}
+@keyframes falling {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  0% {
+    transform: translate(100px, 0) rotate(-45deg);
+  }
+  100% {
+    transform: translate(0, 200px) rotate(-45deg);
+  }
 }

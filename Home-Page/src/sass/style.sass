@@ -8,6 +8,16 @@
   background-size: auto 100%
   background-position: center bottom
 
+// Mixin for size
+@mixin size($width,$height:$width,$bdrs:0)
+  width: $width
+  height: $height
+  border-radius: $bdrs
+
+@mixin pos($left:0,$top:0)
+  left: $left
+  top: $top
+
 // Global styles
 body
   margin: 0
@@ -32,7 +42,11 @@ body
     &-1
       @include background-image('../img/IMG_0321.JPG')
     &-2
-      @include background-image('../img/IMG_0326.PNG')
+      @include size(3.5rem,3.5rem,50%)
+      animation: moonAppear 3s 1s ease-out both
+      top: 20%
+      left: 20%
+
     &-3
       @include background-image('../img/IMG_0322.PNG')
     &-4
@@ -42,12 +56,36 @@ body
     &-6
       @include background-image('../img/IMG_0325.PNG')
 
-  h1
-    position: absolute
-    top: 20%
-    left: 0
-    width: 100%
-    text-align: center
-    font-size: 11rem
-    font-family: 'Pacifico', cursive
-    color: #fff
+  .allstars
+    @include size(100%)
+    [class ^= star]
+      @include size(15rem, .1rem)
+      background: linear-gradient(90deg,#fff 0, transparent 60%)
+      position: absolute
+      transform: rotate(-45deg)
+      animation: falling 3s infinite ease-out
+
+    @for $i from 1 through 5
+      .star#{$i}
+        $posX: random()*100%
+        $posY: random()*-20%+10%
+        @include pos($posX,$posY)
+        animation-delay: $i * -0.1s
+
+@keyframes moonAppear
+  0%
+    box-shadow: inset 0px 0px rgba(255, 255, 255, 0.6)
+  100%
+    box-shadow: inset 5px -5px rgba(255, 255, 255, 0.8)
+
+@keyframes falling
+    0%
+        opacity: 0
+    40%
+        opacity: 1
+    100%
+        opacity: 0
+    0%
+        transform: translate(100px,0) rotate(-45deg)
+    100%
+        transform: translate(0,200px) rotate(-45deg)
