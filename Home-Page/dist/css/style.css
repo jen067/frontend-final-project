@@ -47,7 +47,7 @@ body {
   background-position: center bottom;
 }
 .banner .bg-6 {
-  background-image: url("../img/IMG_0325.PNG");
+  background-image: url("../img/IMG_0325.png");
   background-size: auto 100%;
   background-position: center bottom;
 }
@@ -66,28 +66,28 @@ body {
   animation: falling 3s infinite ease-out;
 }
 .banner .allstars .star1 {
-  left: 67.0495151683%;
-  top: -9.2506438553%;
+  left: 67.1485491594%;
+  top: -7.7463245069%;
   animation-delay: -0.1s;
 }
 .banner .allstars .star2 {
-  left: 18.028428466%;
-  top: -7.9491896277%;
+  left: 6.2395704619%;
+  top: -7.6158588745%;
   animation-delay: -0.2s;
 }
 .banner .allstars .star3 {
-  left: 55.3531683153%;
-  top: -7.1222541853%;
+  left: 70.1225966446%;
+  top: -5.1452269517%;
   animation-delay: -0.3s;
 }
 .banner .allstars .star4 {
-  left: 31.1970781252%;
-  top: 0.6893364968%;
+  left: 89.1261304841%;
+  top: 4.7657443365%;
   animation-delay: -0.4s;
 }
 .banner .allstars .star5 {
-  left: 15.5894028841%;
-  top: -4.4395215274%;
+  left: 0.3589136585%;
+  top: 8.2484514336%;
   animation-delay: -0.5s;
 }
 
