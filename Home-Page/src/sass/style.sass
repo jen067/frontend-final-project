@@ -46,7 +46,6 @@ body
       animation: moonAppear 3s 1s ease-out both
       top: 20%
       left: 20%
-
     &-3
       @include background-image('../img/IMG_0322.PNG')
     &-4
@@ -56,21 +55,41 @@ body
     &-6
       @include background-image('../img/IMG_0325.png')
 
-  .allstars
-    @include size(100%)
-    [class ^= star]
-      @include size(15rem, .1rem)
-      background: linear-gradient(90deg,#fff 0, transparent 60%)
-      position: absolute
-      transform: rotate(-45deg)
-      animation: falling 3s infinite ease-out
+.maintitle 
+    position: absolute
+    font-family: "Noto Serif", serif
+    color: rgba(255,255,255,.9)
+    font-size: 10rem
+    letter-spacing: 1rem
+    top: 37%
+    left: 50%
+    transform: translate(-50%, -50%)
 
-    @for $i from 1 through 5
-      .star#{$i}
-        $posX: random()*100%
-        $posY: random()*-20%+10%
-        @include pos($posX,$posY)
-        animation-delay: $i * -0.1s
+    &::after
+      content:' '
+      width: 0
+      height: 15rem
+      border: 1px solid rgba(255,255,255,.9)
+      position: absolute
+      bottom: -15rem
+      left: 50%
+
+
+.allstars
+  @include size(100%)
+  [class ^= star]
+    @include size(15rem, .1rem)
+    background: linear-gradient(90deg,#fff 0, transparent 60%)
+    position: absolute
+    transform: rotate(-45deg)
+    animation: falling 3s infinite ease-out
+
+  @for $i from 1 through 5
+    .star#{$i}
+      $posX: random()*100%
+      $posY: random()*-20%+10%
+      @include pos($posX,$posY)
+      animation-delay: $i * -0.1s
 
 @keyframes moonAppear
   0%
@@ -89,3 +108,7 @@ body
         transform: translate(100px,0) rotate(-45deg)
     100%
         transform: translate(0,200px) rotate(-45deg)
+
+@media screen and (max-width: 40rem)
+  .maintitle
+    font-size: 5rem
