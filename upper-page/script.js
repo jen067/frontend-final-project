@@ -18,6 +18,8 @@ window.onload = function () {
       window.location.href = "../" + targetPage + "/index.html";
     else if (targetPage == "400meters-page")
       window.location.href = "../" + targetPage + "/index.html";
+    else if (targetPage == "Home-Page")
+      window.location.href = "../" + targetPage + "/dist/index.html";
   }, 4000);
 };
 

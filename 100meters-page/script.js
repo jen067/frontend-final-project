@@ -51,7 +51,6 @@ function circleGrow(newclr) {
   circle.classList.add("grow");
   body.style.overflow = "hidden";
   circle.addEventListener("transitionend", () => {
-    console.log("f");
     circle.classList.remove("grow");
     body.style.overflow = "visible";
   });
@@ -88,7 +87,7 @@ toggle.forEach((e) => {
       window.location.href = "../next-page/index.html";
     } else {
       localStorage.setItem("sourcePage", "100meters-page");
-      localStorage.setItem("targetPage", "index.html");
+      localStorage.setItem("targetPage", "Home-Page");
       window.location.href = "../upper-page/index.html";
     }
   });
