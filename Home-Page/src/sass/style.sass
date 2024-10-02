@@ -15,6 +15,7 @@
   border-radius: $bdrs
 
 @mixin pos($left:0,$top:0)
+  position: absolute
   left: $left
   top: $top
 
@@ -56,13 +57,11 @@ body
       @include background-image('../img/IMG_0325.png')
 
 .maintitle 
-    position: absolute
+    +pos(50%,37%)
     font-family: "Noto Serif", serif
     color: rgba(255,255,255,.9)
     font-size: 10rem
     letter-spacing: 1rem
-    top: 37%
-    left: 50%
     transform: translate(-50%, -50%)
 
     &::after
@@ -74,13 +73,18 @@ body
       bottom: -15rem
       left: 50%
 
-
+.subtitle
+  +pos(50%,83%)
+  transform: translate(-50%, -50%)
+  color: rgba(255,255,255,.9)
+  font-family: "Noto Serif", serif
+  font-size: 1.5rem
+  
 .allstars
   @include size(100%)
   [class ^= star]
     @include size(15rem, .1rem)
     background: linear-gradient(90deg,#fff 0, transparent 60%)
-    position: absolute
     transform: rotate(-45deg)
     animation: falling 3s infinite ease-out
 
@@ -112,3 +116,4 @@ body
 @media screen and (max-width: 40rem)
   .maintitle
     font-size: 5rem
+    letter-spacing: 0
