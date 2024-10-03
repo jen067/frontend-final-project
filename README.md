@@ -10,3 +10,4 @@
   - 封面生物連結設置
   - 分頁生物動畫設置
   - 分頁生物介紹
+分頁連結先點這 https://jen067.github.io/frontend-final-project/100meters-page/
