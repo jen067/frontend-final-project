@@ -97,32 +97,32 @@ body {
 }
 .allstars .star1 {
   position: absolute;
-  left: 51.5335965909%;
-  top: -4.5837850501%;
+  left: 19.690388327%;
+  top: 5.6284266946%;
   animation-delay: -0.1s;
 }
 .allstars .star2 {
   position: absolute;
-  left: 57.0119978582%;
-  top: -0.094485829%;
+  left: 96.35984425%;
+  top: 0.9933644212%;
   animation-delay: -0.2s;
 }
 .allstars .star3 {
   position: absolute;
-  left: 8.649589708%;
-  top: -8.4160398318%;
+  left: 37.1888485936%;
+  top: 0.5478977644%;
   animation-delay: -0.3s;
 }
 .allstars .star4 {
   position: absolute;
-  left: 81.0203199061%;
-  top: -0.8208376118%;
+  left: 89.1142923323%;
+  top: 9.6215788858%;
   animation-delay: -0.4s;
 }
 .allstars .star5 {
   position: absolute;
-  left: 85.7982568087%;
-  top: 4.2035735909%;
+  left: 67.1163043834%;
+  top: -2.6682663273%;
   animation-delay: -0.5s;
 }
 
@@ -151,9 +151,40 @@ body {
     transform: translate(0, 200px) rotate(-45deg);
   }
 }
+@media screen and (width: 64rem) and (height: 37.5rem) {
+  .maintitle::after {
+    height: 10rem;
+    bottom: -10rem;
+  }
+}
 @media screen and (max-width: 40rem) {
   .maintitle {
     font-size: 5rem;
-    letter-spacing: 0;
+    letter-spacing: 0.1rem;
+  }
+}
+@media screen and (max-width: 25rem) {
+  .maintitle::after {
+    bottom: -15rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-height: 28.125rem) {
+  .maintitle {
+    font-size: 5rem;
+  }
+  .maintitle::after {
+    height: 5rem;
+    bottom: -110%;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .allstars [class^=star] {
+    width: 5rem;
+    height: 0.1rem;
+    border-radius: 0;
   }
 }

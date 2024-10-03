@@ -113,7 +113,33 @@ body
     100%
         transform: translate(0,200px) rotate(-45deg)
 
+@media screen and (width: 64rem) and (height: 37.5rem)
+    .maintitle
+      &::after
+        height: 10rem
+        bottom: -10rem
+
 @media screen and (max-width: 40rem)
   .maintitle
     font-size: 5rem
-    letter-spacing: 0
+    letter-spacing: .1rem
+
+@media screen and (max-width: 25rem)
+  .maintitle
+      &::after
+        bottom: -15rem
+  .subtitle
+    font-size: 1rem
+
+@media screen and (max-height:28.125rem)
+  .maintitle
+    font-size: 5rem
+
+    &::after
+      height: 5rem
+      bottom: -110%
+  .subtitle
+    font-size: 1rem
+  .allstars
+    [class ^= star]
+      @include size(5rem, .1rem)
