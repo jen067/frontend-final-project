@@ -90,7 +90,7 @@ main {
 
 /* .circle 觸發條件 */
 .grow{
-    transform: scale(100);
+    transform: scale(150);
     opacity: 1;
     overflow: hidden;
 }

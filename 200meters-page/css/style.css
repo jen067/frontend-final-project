@@ -82,14 +82,15 @@ main {
     position: absolute;
     transform: scale(1);
     transition: transform 1s;
-    top: 0.5rem;
+    top: -.6rem;
+    left: 0;
     z-index: 1;
     opacity: 0;
 }
 
 /* .circle 觸發條件 */
 .grow{
-    transform: scale(100);
+    transform: scale(150);
     opacity: 1;
     overflow: hidden;
 }
