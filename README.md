@@ -13,3 +13,5 @@
   
 - 分頁連結
    https://jen067.github.io/frontend-final-project/100meters-page/
+- 圖片動畫參考
+  https://www.youtube.com/watch?v=b6dI42vEsrs
